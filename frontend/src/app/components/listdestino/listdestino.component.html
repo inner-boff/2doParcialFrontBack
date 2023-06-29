@@ -10,16 +10,18 @@
         <tr>
           <th scope="col">Nombre</th>
           <th scope="col">Descripción</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Stock</th>
+          <th scope="col">Actividades</th>
+          <th scope="col">Eventos</th>
+          <th scope="col">Estacion</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">  </th>
-          <td> </td>
-          <td>  </td>
-          <td>  </td>
+        <tr class="table-active" *ngFor="let dest of listDestinos">
+          <th scope="row">{{dest.nombre}}</th>
+          <td>{{dest.descripcion}}</td>
+          <td>{{dest.actividades[0].nombre}}</td>
+          <td>{{dest.eventos[0].nombre}}</td>
+          <td>{{dest.estacion}}</td>
           <td>
             <!-- <button type="button" class="btn btn-info">Edit</button>
             <button (click)="eliminarProducto(producto._id)" id="delete" type="button" class="btn btn-danger">Delete</button> -->
