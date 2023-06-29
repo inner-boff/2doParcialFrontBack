@@ -1,0 +1,68 @@
+POST http://localhost:3000/api/destinos
+Content-Type: application/json
+
+{
+    "nombre": "Mar del Plata",
+    "descripcion": "Disfruta del sol y las playas de Mar del Plata.",
+    "actividades": [
+        {
+            "nombre": "Surf",
+            "descripcion": "Disfruta de las olas y practica surf en las playas de Mar del Plata.",
+            "categoria": "deporte"
+        }
+    ],
+    "eventos": [
+            {
+                "nombre": "Festival de Cine",
+                "descripcion": "Asiste a proyecciones de películas en el festival de cine de Mar del Plata.",
+                "fecha": "enero"
+            }
+        ],
+    "estacion": 1
+        
+}
+###
+
+GET http://localhost:3000/api/destinos
+Content-Type: application/json
+
+
+###
+
+
+DELETE http://localhost:3000/api/destinos/
+Content-Type: application/json
+
+
+###
+
+
+GET http://localhost:3000/api/destinos/
+Content-Type: application/json
+
+
+###
+
+PUT http://localhost:3000/api/destinos/649cca62b6228d9114efd759
+Content-Type: application/json 
+
+{
+    "nombre": "Mar del PlataSSSSSSSS",
+    "descripcion": "Disfruta del sol y las playas de Mar del Plata.",
+    "actividades": [
+        {
+            "nombre": "Surf",
+            "descripcion": "Disfruta de las olas y practica surf en las playas de Mar del Plata.",
+            "categoria": "deporte"
+        }
+    ],
+    "eventos": [
+            {
+                "nombre": "Festival de Cine",
+                "descripcion": "Asiste a proyecciones de películas en el festival de cine de Mar del Plata.",
+                "fecha": "enero"
+            }
+        ],
+    "estacion": 3
+        
+}
