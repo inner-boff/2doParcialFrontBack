@@ -1,32 +1,37 @@
 <div class="container">
-    <div class="flex">
-      <h2>Listado de productos</h2>
-      <button type="button" class="btn btn-primary btn-lg" routerLink="/add">
-        Agregar producto
-      </button>
-    </div>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Nombre</th>
-          <th scope="col">Descripción</th>
-          <th scope="col">Actividades</th>
-          <th scope="col">Eventos</th>
-          <th scope="col">Estacion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="table-active" *ngFor="let dest of listDestinos">
-          <th scope="row">{{dest.nombre}}</th>
-          <td>{{dest.descripcion}}</td>
-          <td>{{dest.actividades[0].nombre}}</td>
-          <td>{{dest.eventos[0].nombre}}</td>
-          <td>{{dest.estacion}}</td>
-          <td>
-            <!-- <button type="button" class="btn btn-info">Edit</button>
-            <button (click)="eliminarProducto(producto._id)" id="delete" type="button" class="btn btn-danger">Delete</button> -->
-          </td>
-      </tbody>
-    </table>
+  <div class="flex">
+    <h2>Destinos</h2>
+    <button type="button" class="btn btn-primary btn-lg" routerLink="/add">
+      Agregar producto
+    </button>
   </div>
-  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Estacion</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Cant. Actividades</th>
+        <th scope="col">Cant. Eventos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-active" *ngFor="let dest of listDestinos">
+        <td scope="row" *ngIf="dest.estacion==1">Verano</td>
+        <td scope="row" *ngIf="dest.estacion==2">Otoño</td>
+        <td scope="row" *ngIf="dest.estacion==3">Invierno</td>
+        <td scope="row" *ngIf="dest.estacion==4">Primavera</td>
+        <th>{{dest.nombre}}</th>
+        <td>{{dest.descripcion}}</td>
+        <td>{{dest.actividades.length}}</td>
+        <td>{{dest.eventos.length}}</td>
+        <td>
+          <button type="button" class="btn btn-info">Edit</button>
+          <button (click)="eliminarDestino(dest._id)" id="delete" type="button" class="btn btn-danger">Delete</button>
+          <button (click)="irActividades(dest._id)" type="button" class="btn btn-info" routerLink="/add">Ver
+            Actividades</button>
+          <button type="button" class="btn btn-info" routerLink="/add">Ver Eventos</button>
+        </td>
+    </tbody>
+  </table>
+</div>

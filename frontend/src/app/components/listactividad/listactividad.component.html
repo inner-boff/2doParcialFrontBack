@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="flex">
+      <h2>Actividades</h2>
+      <button type="button" class="btn btn-primary btn-lg" routerLink="/add">
+        Agregar actividad
+      </button>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Categoria</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-active" *ngFor="let act of destino.actividades">
+          <th>{{act.nombre}}</th>
+          <td>{{act.descripcion}}</td>
+          <td>{{act.categoria}}</td>
+          <td>
+            <button type="button" class="btn btn-info">Edit</button>
+            <!--<button (click)="eliminarDestino(dest._id)" id="delete" type="button" class="btn btn-danger">Delete</button>-->
+          </td>
+      </tbody>
+    </table>
+  </div>

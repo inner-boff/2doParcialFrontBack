@@ -8,6 +8,7 @@ import { Destino } from '../../models/destino';
 })
 export class DestinoService {
   url= "http://localhost:3000/api/destinos/";
+  public destinoElegido: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +19,10 @@ export class DestinoService {
   deleteDestino(id: string):Observable<any> {
     return this.http.delete(this.url + id);
   }
+
+  getDestino(id: string):Observable<any> {
+    return this.http.get(this.url + id);
+  }  
 
   postDestino(prod: Destino):Observable<any> {
     return this.http.post(this.url,prod);
