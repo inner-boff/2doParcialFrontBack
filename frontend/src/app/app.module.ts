@@ -7,7 +7,8 @@ import { AddeditdestinoComponent } from './components/addeditdestino/addeditdest
 import { ListdestinoComponent } from './components/listdestino/listdestino.component';
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule} from '@angular/forms';
-import { ListactividadComponent } from './components/listactividad/listactividad.component'
+import { ListactividadComponent } from './components/listactividad/listactividad.component';
+import { IntegrantesDelEquipoComponent } from './components/integrantes-del-equipo/integrantes-del-equipo.component'
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ListactividadComponent } from './components/listactividad/listactividad
     AppComponent,
     AddeditdestinoComponent,
     ListdestinoComponent,
-    ListactividadComponent
+    ListactividadComponent,
+    IntegrantesDelEquipoComponent
   ],
   imports: [
     BrowserModule,

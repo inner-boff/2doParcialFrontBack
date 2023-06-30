@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import  {FormBuilder, FormGroup, Validators }  from '@angular/forms';
+import  {FormBuilder, FormGroup, Validators}  from '@angular/forms';
 import { Router } from '@angular/router';
 import { Destino } from 'src/app/models/destino';
 import { DestinoService } from 'src/app/services/destino.service';
@@ -17,6 +17,7 @@ export class AddeditdestinoComponent {
     this.destinoForm = this.fb.group({
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
+      // actividades y objetos son Objetos, no String
       actividades: ['', Validators.required],
       eventos: ['', Validators.required],
       estacion: ['', Validators.required]

@@ -1,0 +1,24 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .tarjeta {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 0px 20px 10px;
+    text-align: center;
+  }
+
+  .tarjeta-contenido {
+    padding: 15px 20px 10px;
+  }
+
+  h1 {
+    margin: 20px;
+  }
+
+  button {
+    margin-left: 20px;
+  }
