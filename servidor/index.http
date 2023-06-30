@@ -2,23 +2,23 @@ POST http://localhost:3000/api/destinos
 Content-Type: application/json
 
 {
-    "nombre": "Mar del Plata",
-    "descripcion": "Disfruta del sol y las playas de Mar del Plata.",
+    "nombre": "Isla Margarita",
+    "descripcion": "Disfruta del sol y las playas del Mar Caribe",
     "actividades": [
         {
-            "nombre": "Surf",
-            "descripcion": "Disfruta de las olas y practica surf en las playas de Mar del Plata.",
+            "nombre": "Windsurf",
+            "descripcion": "Las condiciones de viento y olas son ideales para la práctica del windsurf",
             "categoria": "deporte"
         }
     ],
     "eventos": [
             {
-                "nombre": "Festival de Cine",
-                "descripcion": "Asiste a proyecciones de películas en el festival de cine de Mar del Plata.",
-                "fecha": "enero"
+                "nombre": "Festival Gastronómico",
+                "descripcion": "Disfruta de las comidas típicas de la región y platos internacionales",
+                "fecha": "agosto"
             }
         ],
-    "estacion": 1
+    "estacion": 2
         
 }
 ###

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Destino } from '../../../models/destino';
+import { Destino } from '../../models/destino';
 import { DestinoService } from '../../services/destino.service';
 import { Router } from '@angular/router';
 
