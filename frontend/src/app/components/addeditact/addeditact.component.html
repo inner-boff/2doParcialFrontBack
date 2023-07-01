@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 *ngIf="esAgregar">Nueva actividad</h1>
+    <h1 *ngIf="esEditar">Modificar actividad</h1>
+    <form [formGroup]="actividadForm">
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="inputDefault">Ingrese el nombre de la actividad</label>
+            <input formControlName="nombre" type="text" class="form-control" placeholder={{actividad.nombre}} id="actNombre">
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="inputDefault">Ingrese la descripcion de la actividad</label>
+            <input formControlName="descripcion" type="text" class="form-control" placeholder={{actividad.descripcion}} 
+                id="actDesc">
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="inputDefault">Ingrese la categoria de la actividad</label>
+            <input formControlName="categoria" type="text" class="form-control" placeholder={{actividad.categoria}} 
+                id="actCategoria">
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button *ngIf="esAgregar" (click)="agregarActividad()" type="submit" class="btn btn-primary">Agregar actividad</button>
+            <button *ngIf="esEditar" (click)="editarActividad()" type="submit" class="btn btn-primary">Editar actividad</button>
+            <button style="margin-left: 5px;" routerLink="/listAct" type="button" class="btn btn-secondary">Volver</button>
+        </div>
+
+    </form>
+</div>

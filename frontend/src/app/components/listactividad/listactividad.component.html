@@ -1,7 +1,7 @@
 <div class="container">
     <div class="flex">
       <h2>Actividades</h2>
-      <button type="button" class="btn btn-primary btn-lg" routerLink="/add">
+      <button (click)="agregarActividad()" type="button" class="btn btn-primary btn-lg">
         Agregar actividad
       </button>
     </div>
@@ -19,7 +19,8 @@
           <td>{{act.descripcion}}</td>
           <td>{{act.categoria}}</td>
           <td>
-            <button type="button" class="btn btn-info">Edit</button>
+            <button (click)="editarActividad(act)" type="button" class="btn btn-info">Edit</button>
+            <button (click)="eliminarActividad(act)" type="button" class="btn btn-info">Delete</button>
           </td>
       </tbody>
     </table>

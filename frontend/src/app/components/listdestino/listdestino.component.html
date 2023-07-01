@@ -37,9 +37,8 @@
         <td>
           <button type="button" class="btn btn-info">Edit</button>
           <button (click)="eliminarDestino(dest._id)" id="delete" type="button" class="btn btn-danger">Delete</button>
-          <button (click)="irActividades(dest._id)" type="button" class="btn btn-info" routerLink="/add">Ver
-            Actividades</button>
-          <button type="button" class="btn btn-info" routerLink="/add">Ver Eventos</button>
+          <button (click)="irActividades(dest)" type="button" class="btn btn-info">Ver Actividades</button>
+          <button (click)="irEventos(dest)" type="button" class="btn btn-info">Ver Eventos</button>
         </td>
     </tbody>
   </table>

@@ -28,8 +28,8 @@ export class AddeditdestinoComponent {
     const DESTINO: Destino = {
       nombre: this.destinoForm.value.nombre,
       descripcion: this.destinoForm.value.descripcion,
-      actividades: this.destinoForm.value.actividades,
-      eventos: this.destinoForm.value.eventos,
+      actividades: [],
+      eventos: [],
       estacion: this.destinoForm.value.estacion
     }
     console.log(Destino);
@@ -43,7 +43,6 @@ export class AddeditdestinoComponent {
       this.destinoForm.reset();
     }
     })
-
   }
 
 }

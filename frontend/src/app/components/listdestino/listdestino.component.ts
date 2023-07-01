@@ -41,9 +41,27 @@ export class ListdestinoComponent implements OnInit {
     })
   }
 
-  irActividades(id:any){
-    this._destinoService.destinoElegido = id;
+  irActividades(dest: Destino){
+    if (dest._id){
+      this._destinoService.destinoElegido = dest._id;
+    }else{
+      this._destinoService.destinoElegido = '';
+    }
+    
+    this._destinoService.destinoSel = dest;
     console.log(this._destinoService.destinoElegido);
     this.router.navigate(['/listAct']);
   }
+
+  irEventos(dest: Destino){
+    if (dest._id){
+      this._destinoService.destinoElegido = dest._id
+    }else{
+      this._destinoService.destinoElegido = '';
+    }
+    
+    this._destinoService.destinoSel = dest
+    console.log(this._destinoService.destinoElegido);
+    this.router.navigate(['/listEve']);
+  }  
 }

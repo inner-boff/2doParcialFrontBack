@@ -2,7 +2,7 @@ POST http://localhost:3000/api/destinos
 Content-Type: application/json
 
 {
-    "nombre": "Isla Margarita",
+    "nombre": "San Bernardo",
     "descripcion": "Disfruta del sol y las playas del Mar Caribe",
     "actividades": [
         {
@@ -43,26 +43,26 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/api/destinos/649cca62b6228d9114efd759
+PUT http://localhost:3000/api/destinos/649f71302a2d56e73e0ccd35
 Content-Type: application/json 
 
 {
-    "nombre": "Mar del PlataSSSSSSSS",
-    "descripcion": "Disfruta del sol y las playas de Mar del Plata.",
+    "nombre": "San Bernardo2",
+    "descripcion": "Disfruta del sol y las playas del Mar Caribe",
     "actividades": [
         {
-            "nombre": "Surf",
-            "descripcion": "Disfruta de las olas y practica surf en las playas de Mar del Plata.",
+            "nombre": "Windsurf2",
+            "descripcion": "Las condiciones de viento y olas son ideales para la práctica del windsurf",
             "categoria": "deporte"
         }
     ],
     "eventos": [
             {
-                "nombre": "Festival de Cine",
-                "descripcion": "Asiste a proyecciones de películas en el festival de cine de Mar del Plata.",
-                "fecha": "enero"
+                "nombre": "Festival Gastronómico2",
+                "descripcion": "Disfruta de las comidas típicas de la región y platos internacionales",
+                "fecha": "agosto"
             }
         ],
-    "estacion": 3
+    "estacion": 2
         
 }

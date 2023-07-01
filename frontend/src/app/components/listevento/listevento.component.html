@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="flex">
+      <h2>Eventos</h2>
+      <button (click)="agregarEvento()" type="button" class="btn btn-primary btn-lg">
+        Agregar Evento
+      </button>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-active" *ngFor="let eve of destino.eventos">
+          <th>{{eve.nombre}}</th>
+          <td>{{eve.descripcion}}</td>
+          <td>{{eve.fecha}}</td>
+          <td>
+            <button (click)="editarEvento(eve)" type="button" class="btn btn-info">Edit</button>
+            <button (click)="eliminarEvento(eve)" type="button" class="btn btn-info">Delete</button>
+          </td>
+      </tbody>
+    </table>
+    <button routerLink="/" type="button" class="btn btn-secondary">Volver</button>
+  </div>

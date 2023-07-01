@@ -59,7 +59,7 @@ exports.obtenerDestino = async(req,res) => {
 
 exports.actualizarDestino = async(req,res) => {
     try {
-        const { nombre,descripcion,actividad,evento,estacion } = req.body
+        const { nombre,descripcion,actividades,eventos,estacion } = req.body
         let destino;
         destino = await Destino.findById(req.params.id);
 
@@ -69,8 +69,8 @@ exports.actualizarDestino = async(req,res) => {
 
         destino.nombre = nombre;
         destino.descripcion = descripcion;
-        destino.actividad = actividad;
-        destino.evento = evento;
+        destino.actividades = actividades;
+        destino.eventos = eventos;
         destino.estacion = estacion;
 
         destino = await Destino.findOneAndUpdate({_id:req.params.id}, destino, {new: true});

@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 *ngIf="esAgregar">Nuevo evento</h1>
+    <h1 *ngIf="esEditar">Modificar evento</h1>
+    <form [formGroup]="eventoForm">
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="inputDefault">Ingrese el nombre del evento</label>
+            <input formControlName="nombre" type="text" class="form-control" placeholder={{evento.nombre}} id="eveNombre">
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="inputDefault">Ingrese la descripcion del evento</label>
+            <input formControlName="descripcion" type="text" class="form-control" placeholder={{evento.descripcion}} 
+                id="eveDesc">
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="inputDefault">Ingrese la fecha del evento</label>
+            <input formControlName="fecha" type="text" class="form-control" placeholder={{evento.fecha}} 
+                id="eveFecha">
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button *ngIf="esAgregar" (click)="agregarEvento()" type="submit" class="btn btn-primary">Agregar evento</button>
+            <button *ngIf="esEditar" (click)="editarEvento()" type="submit" class="btn btn-primary">Editar evento</button>
+            <button style="margin-left: 5px;" routerLink="/listEve" type="button" class="btn btn-secondary">Volver</button>
+        </div>
+
+    </form>
+</div>
