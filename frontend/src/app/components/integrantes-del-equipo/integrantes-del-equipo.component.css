@@ -3,16 +3,36 @@
     flex-wrap: wrap;
     justify-content: flex-start;
   }
+  .flex{
+    width: 100%;
+  } 
   
   .tarjeta {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     margin: 0px 20px 10px;
     text-align: center;
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-radius: 10px;
+  }
+ 
+  .tarjeta img{
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    transition: all 400ms ease;
+  }
+  .tarjeta img:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
   }
 
   .tarjeta-contenido {
+    width: 65%;
     padding: 15px 20px 10px;
+    margin: auto;
   }
 
   h1 {
@@ -21,4 +41,6 @@
 
   button {
     margin-left: 20px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  
   }
