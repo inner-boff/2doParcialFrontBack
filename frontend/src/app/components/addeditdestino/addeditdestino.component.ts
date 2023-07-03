@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Destino } from 'src/app/models/destino';
 import { DestinoService } from 'src/app/services/destino.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addeditdestino',
@@ -19,7 +20,8 @@ export class AddeditdestinoComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private _destinoservice: DestinoService,
-    private actRouter: ActivatedRoute
+    private actRouter: ActivatedRoute,
+    private toast: ToastrService
   ) {
     this.destinoForm = this.fb.group({
       nombre: ['', Validators.required],
@@ -56,15 +58,7 @@ export class AddeditdestinoComponent implements OnInit {
   }
 
   agregarDestino() {
-    /*
-    const DESTINO: Destino = {
-      nombre: this.destinoForm.value.nombre,
-      descripcion: this.destinoForm.value.descripcion,
-      actividades: [],
-      eventos: [],
-      estacion: this.destinoForm.value.estacion,
-    };
-    */
+
     if (this.id !== null) {
 
       const DESTINO: Destino = {
@@ -78,6 +72,7 @@ export class AddeditdestinoComponent implements OnInit {
       this._destinoservice.putDestinoSeleccionado(this.id, DESTINO).subscribe({
         next: (data) => {
           console.log('destino modificado');
+          this.toast.success('Destino modificado', ' ' , { timeOut: 2000 });
           this.router.navigate(['/lista-destino']);
         },
         error: (err) => {
@@ -100,6 +95,7 @@ export class AddeditdestinoComponent implements OnInit {
       this._destinoservice.postDestino(DESTINO).subscribe({
         next: (data) => {
           console.log('destino registrado');
+          this.toast.success('Destino agregado', ' ' , { timeOut: 2000 });
           this.router.navigate(['/lista-destino']);
         },
         error: (err) => {

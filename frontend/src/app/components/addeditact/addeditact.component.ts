@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Actividad } from 'src/app/models/actividad';
 import { Destino } from 'src/app/models/destino';
 import { DestinoService } from 'src/app/services/destino.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addeditact',
@@ -26,7 +27,11 @@ export class AddeditactComponent implements OnInit {
   descripcion: 'Descripcion',
   categoria: 'Deporte - Cultural - Nocturno'};                       
 
-  constructor(private fb:FormBuilder, private router:Router, private _destinoService: DestinoService){
+  constructor(private fb:FormBuilder, 
+              private router:Router, 
+              private _destinoService: DestinoService,
+              private toast: ToastrService
+  ){
     this.actividadForm = this.fb.group({
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
@@ -63,6 +68,7 @@ export class AddeditactComponent implements OnInit {
     this._destinoService.putDestino(this.destino).subscribe({
       next: data => {
         console.log("Actividad modificada");
+        this.toast.success('Actividad modificada', ' ' , { timeOut: 2000 });
         this.router.navigate(['/listAct'])
     }, error: err => {
       console.log(err);
@@ -83,6 +89,7 @@ export class AddeditactComponent implements OnInit {
     this._destinoService.putDestino(this.destino).subscribe({
       next: data => {
         console.log("Actividad agregada");
+        this.toast.success('Actividad agregada', ' ' , { timeOut: 2000 });
         this.router.navigate(['/listAct'])
     }, error: err => {
       console.log(err);

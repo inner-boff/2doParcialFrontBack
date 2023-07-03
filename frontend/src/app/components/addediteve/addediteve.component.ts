@@ -5,6 +5,7 @@ import { Actividad } from 'src/app/models/actividad';
 import { Destino } from 'src/app/models/destino';
 import { Evento } from 'src/app/models/evento';
 import { DestinoService } from 'src/app/services/destino.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addediteve',
@@ -31,7 +32,11 @@ export class AddediteveComponent implements OnInit {
     estacion: 0
   };
 
-  constructor(private fb: FormBuilder, private router: Router, private _destinoService: DestinoService) {
+  constructor(private fb: FormBuilder, 
+              private router: Router, 
+              private _destinoService: DestinoService,
+              private toast: ToastrService
+  ) {
     this.eventoForm = this.fb.group({
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
@@ -68,6 +73,7 @@ export class AddediteveComponent implements OnInit {
     this._destinoService.putDestino(this.destino).subscribe({
       next: data => {
         console.log("Evento modificado");
+        this.toast.success('Evento modificado', ' ' , { timeOut: 2000 });
         this.router.navigate(['/listEve'])
     }, error: err => {
       console.log(err);
@@ -88,7 +94,8 @@ export class AddediteveComponent implements OnInit {
     this.destino.eventos.push(EVENTO);
     this._destinoService.putDestino(this.destino).subscribe({
       next: data => {
-        console.log("Evento agregada");
+        console.log("Evento agregado");
+        this.toast.success('Evento agregado', ' ' , { timeOut: 2000 });
         this.router.navigate(['/listEve'])
     }, error: err => {
       console.log(err);

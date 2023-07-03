@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Destino } from '../../models/destino';
 import { DestinoService } from '../../services/destino.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-listdestino',
@@ -12,7 +13,8 @@ export class ListdestinoComponent implements OnInit {
   listDestinos: Destino[] = [];
 
   constructor(private _destinoService: DestinoService,
-              private router: Router
+              private router: Router,
+              private toast: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class ListdestinoComponent implements OnInit {
       next: data => {
         this.obtenerDestinos();
         console.log("Se elimino destino");
+        this.toast.success('Destino eliminado', ' ' , { timeOut: 2000 });
       }, error: err => {
         console.log(err);
       }

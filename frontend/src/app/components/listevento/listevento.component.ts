@@ -3,6 +3,7 @@ import { Destino } from '../../models/destino';
 import { DestinoService } from '../../services/destino.service';
 import { Router } from '@angular/router';
 import { Evento } from 'src/app/models/evento';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-listevento',
@@ -17,7 +18,8 @@ export class ListeventoComponent implements OnInit{
                        estacion: 0};
 
   constructor(private _destinoService: DestinoService,
-    private router: Router  
+              private router: Router,
+              private toast: ToastrService  
   ) { }
 
   ngOnInit(): void {
@@ -39,6 +41,7 @@ export class ListeventoComponent implements OnInit{
     this._destinoService.putDestino(this.destino).subscribe({
       next: data => {
         console.log("Evento eliminado");
+        this.toast.success('Evento eliminado', ' ' , { timeOut: 2000 });
         this.router.navigate(['/listEve'])
     }, error: err => {
       console.log(err);
