@@ -56,6 +56,7 @@ export class AddeditdestinoComponent implements OnInit {
   }
 
   agregarDestino() {
+    /*
     const DESTINO: Destino = {
       nombre: this.destinoForm.value.nombre,
       descripcion: this.destinoForm.value.descripcion,
@@ -63,8 +64,17 @@ export class AddeditdestinoComponent implements OnInit {
       eventos: [],
       estacion: this.destinoForm.value.estacion,
     };
-
+    */
     if (this.id !== null) {
+
+      const DESTINO: Destino = {
+        nombre: this.destinoForm.value.nombre,
+        descripcion: this.destinoForm.value.descripcion,
+        actividades: this._destinoservice.destinoSel.actividades,
+        eventos: this._destinoservice.destinoSel.eventos,
+        estacion: this.destinoForm.value.estacion,
+      };
+
       this._destinoservice.putDestinoSeleccionado(this.id, DESTINO).subscribe({
         next: (data) => {
           console.log('destino modificado');
@@ -76,6 +86,15 @@ export class AddeditdestinoComponent implements OnInit {
         },
       });
     } else {
+
+      const DESTINO: Destino = {
+        nombre: this.destinoForm.value.nombre,
+        descripcion: this.destinoForm.value.descripcion,
+        actividades: [],
+        eventos: [],
+        estacion: this.destinoForm.value.estacion,
+      };
+
       console.log(Destino);
 
       this._destinoservice.postDestino(DESTINO).subscribe({

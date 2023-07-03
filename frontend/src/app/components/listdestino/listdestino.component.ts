@@ -64,4 +64,16 @@ export class ListdestinoComponent implements OnInit {
     console.log(this._destinoService.destinoElegido);
     this.router.navigate(['/listEve']);
   }  
+
+  irEditDestino(dest: Destino){
+    if (dest._id){
+      this._destinoService.destinoElegido = dest._id
+    }else{
+      this._destinoService.destinoElegido = '';
+    }
+    
+    this._destinoService.destinoSel = dest
+    console.log(this._destinoService.destinoElegido);
+    this.router.navigate(['/add',dest._id]);
+  }    
 }
