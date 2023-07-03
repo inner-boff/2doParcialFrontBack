@@ -41,9 +41,7 @@ export class AddeditactComponent implements OnInit {
 
     if (this.esEditar){
       console.log("entrando es editar");
-      //this.actividad.nombre = this.destino.actividades[this._destinoService.actElegida].nombre;
-      //this.actividad.descripcion = this.destino.actividades[this._destinoService.actElegida].descripcion;
-      //this.actividad.categoria = this.destino.actividades[this._destinoService.actElegida].categoria;
+      
       this.actividadForm.setValue({
         nombre: this.destino.actividades[this._destinoService.actElegida].nombre,
         descripcion: this.destino.actividades[this._destinoService.actElegida].descripcion,

@@ -46,9 +46,7 @@ export class AddediteveComponent implements OnInit {
 
     if (this.esEditar) {
       console.log("entrando es editar");
-      //this.evento.nombre = this.destino.eventos[this._destinoService.actElegida].nombre;
-      //this.evento.descripcion = this.destino.eventos[this._destinoService.actElegida].descripcion;
-      //this.evento.fecha = this.destino.eventos[this._destinoService.actElegida].fecha;
+      
       this.eventoForm.setValue({
         nombre: this.destino.actividades[this._destinoService.actElegida].nombre,
         descripcion: this.destino.actividades[this._destinoService.actElegida].descripcion,
