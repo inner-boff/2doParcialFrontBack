@@ -39,7 +39,7 @@ export class RegistrarUsuarioComponent {
     }
 
     this.afAuth.createUserWithEmailAndPassword(email, password).then((user) => {
-this.toast.success('El usuario fue registrado con exito', 'Usiario registrado');      
+this.toast.success('El usuario fue registrado con exito', 'Usuario registrado');      
       this.router.navigate(['/login']);
       
     }).catch((error) => {

@@ -14,7 +14,6 @@ import { ListeventoComponent } from './components/listevento/listevento.componen
 import { AddediteveComponent } from './components/addediteve/addediteve.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
-import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/enviroments/enviroment';
@@ -34,7 +33,6 @@ import { ToastrModule } from 'ngx-toastr';
     AddediteveComponent,
     LoginComponent,
     RegistrarUsuarioComponent,
-    VerificarCorreoComponent,
     RecuperarPasswordComponent
   ],
   imports: [

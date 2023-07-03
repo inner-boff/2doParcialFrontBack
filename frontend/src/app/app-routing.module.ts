@@ -10,7 +10,7 @@ import { AddediteveComponent } from './components/addediteve/addediteve.componen
 import { LoginComponent } from './components/login/login.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
-import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
+
 
 const routes: Routes = [
   { path:'', component: LoginComponent },
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'recuperar-password', component: RecuperarPasswordComponent },
   { path:'registrar-usuario', component: RegistrarUsuarioComponent },
-  { path:'verificar-correo', component: VerificarCorreoComponent },
+ 
   { path:'add', component: AddeditdestinoComponent },
   // para hacer el edit de un destino específico
   { path:'add/:id', component: AddeditdestinoComponent },

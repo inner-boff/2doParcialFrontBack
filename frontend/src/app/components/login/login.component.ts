@@ -28,11 +28,9 @@ const email = this.loginUsuario.value.email;
 const password = this.loginUsuario.value.password;
 this.afAuth.signInWithEmailAndPassword(email, password).then((user) =>{
   console.log(user);
-  if(user.user?.emailVerified){
+  
     this.router.navigate(['lista-destino']);
-  }else{
-    this.router.navigate(['/verificar-correo']);
-  }
+
 }).catch((error) =>{
   console.log(error);
   this.toast.error(this.firebaseError.codigoError(error.code),'Error');
