@@ -35,7 +35,7 @@
         <td>{{dest.actividades.length}}</td>
         <td>{{dest.eventos.length}}</td>
         <td>
-          <button type="button" class="btn btn-info">Edit</button>
+          <button [routerLink]="['add',dest._id]" type="button" class="btn btn-info">Edit</button>
           <button (click)="eliminarDestino(dest._id)" id="delete" type="button" class="btn btn-danger">Delete</button>
           <button (click)="irActividades(dest)" type="button" class="btn btn-info">Ver Actividades</button>
           <button (click)="irEventos(dest)" type="button" class="btn btn-info">Ver Eventos</button>

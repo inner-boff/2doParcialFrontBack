@@ -11,6 +11,8 @@ import { AddediteveComponent } from './components/addediteve/addediteve.componen
 const routes: Routes = [
   { path:'', component: ListdestinoComponent },
   { path:'add', component: AddeditdestinoComponent },
+  // pára hacer el edit de un destino específico
+  { path:'add/:id', component: AddeditdestinoComponent },
   { path:'addAct', component: AddeditactComponent },
   { path:'addEve', component: AddediteveComponent },
   { path:'listAct', component: ListactividadComponent },

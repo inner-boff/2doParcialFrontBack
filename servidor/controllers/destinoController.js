@@ -20,7 +20,7 @@ exports.obtenerDestinos = async(req,res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).send("OOPS! Hubo un error...")
+        res.status(500).send("OOPS! Hubo un error con obtenerDestinos()...")
     }
 }
 
@@ -37,7 +37,7 @@ exports.eliminarDestino = async(req,res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).send("OOPS! Hubo un error...")
+        res.status(500).send("OOPS! Hubo un error con eliminarDestino()...")
     }
 }
 
@@ -47,13 +47,13 @@ exports.obtenerDestino = async(req,res) => {
         destino = await Destino.findById(req.params.id)
 
         if(!destino) {
-            res.status(404).json("No se encontyró el destino")
+            res.status(404).json("No se encontró el destino")
         }
-        res.json(destino);s
+        res.json(destino);
 
     } catch (error) {
         console.log(error);
-        res.status(500).send("OOPS! Hubo un error...")
+        res.status(500).send("OOPS! Hubo un error obteniendo el destino...")
     }
 }
 
@@ -64,7 +64,7 @@ exports.actualizarDestino = async(req,res) => {
         destino = await Destino.findById(req.params.id);
 
         if(!destino) {
-            res.json("No se encontyró el destino")
+            res.json("No se encontró el destino")
         }
 
         destino.nombre = nombre;
@@ -79,6 +79,6 @@ exports.actualizarDestino = async(req,res) => {
 
     } catch (error) {
         console.log(error);
-        res.send("OOPS! Hubo un error...")
+        res.send("OOPS! Hubo un error actualizando el destino...")
     }
 }
