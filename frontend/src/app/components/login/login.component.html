@@ -1,0 +1,23 @@
+
+    <div class="contenedor">
+        <div class="body">
+            <!-- inicio de sesion -->
+            <div >
+                <div class="header">
+                    <img class="logoNext" src="../../../assets/images/1-PhotoRoom.png-PhotoRoom.png" alt="img login">
+                    <h2>Bienvenido</h2>
+                    <h4>Inicia sesion</h4>
+                </div>
+                <form (ngSubmit)="login()" [formGroup]="loginUsuario">
+                <div class="form">
+                    <input type="email" formControlName="email" name="email" placeholder="Email" >
+                    <input type="password" formControlName="password" name="passwprd" placeholder="Contraseña">
+                </div>
+                 <p> <a href="/recuperar-password">Olvido su contraseña </a></p>
+
+                <p >No tienes cuenta <a href="/registrar-usuario">Crea tu usuario</a></p>
+                <button type="submit" class="btn">Ingresar</button>
+            </form>
+            </div>
+        </div>
+    </div>

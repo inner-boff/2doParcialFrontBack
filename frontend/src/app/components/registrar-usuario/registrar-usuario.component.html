@@ -1,0 +1,21 @@
+<div class="contenedor">
+    <div class="body">
+        <!-- inicio de sesion -->
+        <div>
+            <div class="header">
+                <img class="logo" src="../../../assets/images/online-registration.png" alt="img login">
+                <h2> Registrarse</h2>
+                <h4> Registre su cuenta usando la siguiene informacion</h4>
+            </div>
+            <form (ngSubmit)="regristrar()" [formGroup]="registrarUsuario">
+            <div class="form">
+                <input type="email" name="email" formControlName="email" placeholder="Email">
+                <input type="password" name="passwprd" formControlName="password" placeholder="Contraseña">
+                <input type="password" name="passwprd" formControlName="repetirPassword" placeholder="Repetir contraseña">
+            </div>
+            <p class="cuenta">Ya tienes cuenta <a href="/login">Ingresa aca</a></p>
+            <button type="submit" class="btn">Registrar</button>
+        </form>
+        </div>
+    </div>
+</div>
