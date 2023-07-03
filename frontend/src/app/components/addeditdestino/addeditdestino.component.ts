@@ -12,16 +12,8 @@ import { DestinoService } from 'src/app/services/destino.service';
 export class AddeditdestinoComponent implements OnInit {
   destinoForm: FormGroup;
 
-  // id elegido por el usuario (para el put)
+  // id para modificar un destino específico seleccionado
   id: string | null;
-
-  destino: Destino = {
-    nombre: '',
-    descripcion: '',
-    actividades: [],
-    eventos: [],
-    estacion: 0,
-  };
 
   constructor(
     private fb: FormBuilder,
@@ -48,8 +40,6 @@ export class AddeditdestinoComponent implements OnInit {
   esEditar() {
 
     if (this.id !== null) {
-
-      //console.log("el id no es nulo. el id seleccionado es: " + this.id);
 
       this._destinoservice.getDestino(this.id).subscribe({
         next: (data) => {
