@@ -20,8 +20,6 @@ const routes: Routes = [
   { path:'registrar-usuario', component: RegistrarUsuarioComponent },
   { path:'verificar-correo', component: VerificarCorreoComponent },
   { path:'add', component: AddeditdestinoComponent },
-  // pára hacer el edit de un destino específico
-  { path:'add/:id', component: AddeditdestinoComponent },
   { path:'addAct', component: AddeditactComponent },
   { path:'addEve', component: AddediteveComponent },
   { path:'listAct', component: ListactividadComponent },

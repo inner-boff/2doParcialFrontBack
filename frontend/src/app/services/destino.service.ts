@@ -41,13 +41,7 @@ export class DestinoService {
     return this.http.post(this.url, prod);
   }
 
- // para actualizar los las actividades y eventos en los detinos
-  putDestino(dest: Destino): Observable<any> {
-     return this.http.put(this.url + dest._id, dest);
+  putDestino(prod: Destino): Observable<any> {
+    return this.http.put(this.url + prod._id, prod);
   }
-
-  //para modifcar solo el destino seleccionado
-  putDestinoSeleccionado(id: string, dest: Destino): Observable<any> {
-    return this.http.put(this.url + id, dest);
- }
 }
