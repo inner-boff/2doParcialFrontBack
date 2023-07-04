@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddeditdestinoComponent } from './components/addeditdestino/addeditdestino.component';
@@ -19,7 +18,8 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/enviroments/enviroment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
+import { NgImageSliderModule } from 'ng-image-slider';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { ToastrModule } from 'ngx-toastr';
     AddediteveComponent,
     LoginComponent,
     RegistrarUsuarioComponent,
-    RecuperarPasswordComponent
+    RecuperarPasswordComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

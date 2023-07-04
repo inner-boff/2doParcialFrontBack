@@ -10,7 +10,7 @@ import { AddediteveComponent } from './components/addediteve/addediteve.componen
 import { LoginComponent } from './components/login/login.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
-
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 const routes: Routes = [
   { path:'', component: LoginComponent },
@@ -28,6 +28,7 @@ const routes: Routes = [
   { path:'listEve', component: ListeventoComponent },
   { path:'integrantes', component: IntegrantesDelEquipoComponent },
   { path:'**', component: LoginComponent },
+
 ];
 
 @NgModule({
