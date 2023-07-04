@@ -1,52 +1,76 @@
 <div class="container">
-  <div class="flex">
+  <div>
+    <header></header>
+    <p>NexTrip es una página web diseñada para ayudar a los usuarios a buscar destinos de viaje y recibir
+      recomendaciones personalizadas basadas en la época del año. El sitio brinda información precisa y le otorga al
+      usuario la posibilidad de agregar, visualizar, modificar y eliminar registros de sus destinos, actividades y
+      eventos favoritos.</p>
 
-
-<h1>Next Trip</h1>
-<p>Este CRUD es el proyecto final de las materias de desarrollo backend y frontend del IFTS 11.</p>
-<p>Permite agregar, ver,  modificar y eliminar registros para una aplicación de destinos turísticos.</p>
-<p>En la tabla se muestran los destinos registrados actualmente.</p>
-
-
+    <div class="containerDestinos">
+      <img src="../../../assets/destinos/inverno.jpg" alt="">
+      <img src="../../../assets/destinos/otoño.jpg" alt="">
+      <img src="../../../assets/destinos/primavera.jpg" alt="">
+      <img src="../../../assets/destinos/verano.jpg" alt="">
+    </div>
+  </div>
+  <div class="destino">
     <h2>Destinos</h2>
-    <button type="button" class="btn btn-primary btn-lg" routerLink="/add">
-      Agregar destino
-    </button>
+    <p>
+      A continuacion y de forma sencilla puede elaborar un itinerario de lugares que le gustaria vsitar, actividades que
+      no quiere perderse y los mejores eventos. Comencemos por agregar un destino.
+    </p>
   </div>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Estacion</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Cant. Actividades</th>
-        <th scope="col">Cant. Eventos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-active" *ngFor="let dest of listDestinos">
-        <td scope="row" *ngIf="dest.estacion==1">Verano</td>
-        <td scope="row" *ngIf="dest.estacion==2">Otoño</td>
-        <td scope="row" *ngIf="dest.estacion==3">Invierno</td>
-        <td scope="row" *ngIf="dest.estacion==4">Primavera</td>
-        <th>{{dest.nombre}}</th>
-        <td>{{dest.descripcion}}</td>
-        <td>{{dest.actividades.length}}</td>
-        <td>{{dest.eventos.length}}</td>
-        <td>
-          <button (click)="irEditDestino(dest)" type="button" class="btn btn-info">Edit</button>
-          <button (click)="eliminarDestino(dest._id)" id="delete" type="button" class="btn btn-danger">Delete</button>
-          <button (click)="irActividades(dest)" type="button" class="btn btn-info">Ver Actividades</button>
-          <button (click)="irEventos(dest)" type="button" class="btn btn-info">Ver Eventos</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tabla">
+    <table class="table table-hover">
+      <thead>
+        <tr class="tablaencabezado">
+          <th scope="col">Estacion</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Cant. Actividades</th>
+          <th scope="col">Cant. Eventos</th>
+        </tr>
+      </thead>
 
-    <button type="button" class="btn btn-outline-info" routerLink="/integrantes">
-      Ver integrantes del grupo
+      <tbody>
+        <tr class="table-active" *ngFor="let dest of listDestinos">
+          <td scope="row" *ngIf="dest.estacion==1">Verano</td>
+          <td scope="row" *ngIf="dest.estacion==2">Otoño</td>
+          <td scope="row" *ngIf="dest.estacion==3">Invierno</td>
+          <td scope="row" *ngIf="dest.estacion==4">Primavera</td>
+          <th>{{dest.nombre}}</th>
+          <td>{{dest.descripcion}}</td>
+          <td>{{dest.actividades.length}}</td>
+          <td>{{dest.eventos.length}}</td>
+
+          <td class="btn-group" role="group" aria-label="Basic example" >
+            <button (click)="irEditDestino(dest)" type="button" class="btn btn-secondary">Editar</button>
+            <button (click)="eliminarDestino(dest._id)" id="delete" type="button" class="btn btn-secondary"
+              style="background-color:#9abdeb">Eliminar</button>
+            <button (click)="irActividades(dest)" type="button" class="btn btn-secondary">Ver Actividades</button>
+            <button (click)="irEventos(dest)" type="button" class="btn btn-secondary">Ver Eventos</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="d-grid gap-2">
+    <button type="button" class="btn btn-outline-dark" routerLink="/add">
+      Agregar destino
     </button>
-  
+    <br>
+  <div class="tarjetaintegrantes" class="card text-white bg-info mb-3">
+      <div class="card-header" style="text-align: center;">¿Quienes somos?</div>
+
+      <div class="card-body">
+        <h4 class="card-title" style="text-align: center; text-decoration-line:underline;">Equipo NexTtrip</h4>
+        <p class="card-text">Somos un grupo de 5 estudiantes de la Tecnicatura de Desarrollo de Software apasionados por viajar y descubrir nuevas aventuras. A continuación, podrás saber un poco más de nosotros.</p>
+      </div>
+      
+      <button type="button" style="background-color: rgb(170, 107, 230); max-width:40rem; margin: auto; margin-block-end:20px;"class="btn btn-outline-info" routerLink="/integrantes">
+        Ver integrantes del grupo
+      </button>
+  </div>
 
 </div>

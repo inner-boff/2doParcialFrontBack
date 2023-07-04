@@ -1,9 +1,7 @@
 <div class="container">
     <div class="flex">
       <h2>Eventos</h2>
-      <button (click)="agregarEvento()" type="button" class="btn btn-primary btn-lg">
-        Agregar Evento
-      </button>
+
     </div>
     <table class="table table-hover">
       <thead>
@@ -24,5 +22,8 @@
           </td>
       </tbody>
     </table>
+    <button (click)="agregarEvento()" type="button" class="btn btn-secondary" style="background-color:#9abdeb">
+      Agregar Evento
+    </button>
     <button routerLink="/lista-destino" type="button" class="btn btn-secondary">Volver</button>
   </div>

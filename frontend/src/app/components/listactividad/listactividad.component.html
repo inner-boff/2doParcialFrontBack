@@ -1,10 +1,10 @@
 <div class="container">
     <div class="flex">
       <h2>Actividades</h2>
-      <button (click)="agregarActividad()" type="button" class="btn btn-primary btn-lg">
-        Agregar actividad
-      </button>
+      <br>
+      
     </div>
+      <br>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -19,10 +19,13 @@
           <td>{{act.descripcion}}</td>
           <td>{{act.categoria}}</td>
           <td>
-            <button (click)="editarActividad(act)" type="button" class="btn btn-info">Edit</button>
-            <button (click)="eliminarActividad(act)" type="button" class="btn btn-info">Delete</button>
+            <button (click)="editarActividad(act)" type="button" class="btn btn-info">Editar</button>
+            <button (click)="eliminarActividad(act)" type="button" class="btn btn-info">Eliminar</button>
           </td>
       </tbody>
     </table>
+    <button (click)="agregarActividad()" type="button" style="background-color: #9abdeb;"class="btn btn-secondary">
+      Agregar actividad
+    </button>
     <button routerLink="/lista-destino" type="button" class="btn btn-secondary">Volver</button>
   </div>
